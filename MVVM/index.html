@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div id="app">
+        {{ msg.a }}
+        <div v-text="msg.a"></div>
+        <ul>
+            <li>{{ msg.a }} {{ cart }} </li>
+            <li> {{ cart }} </li>
+        </ul>
+    </div>
+    <script src="watcher.js"></script>
+    <script src="observer.js"></script>
+    <script src="compile.js"></script>
+    <script src="mvvm.js"></script>
+    <script>
+        let vm = new MVVM({
+          el: '#app',
+          data: {
+            msg: { a: 'zfpack' },
+            cart: 'hello world'
+          }
+        })
+    </script>
+</body>
+</html>

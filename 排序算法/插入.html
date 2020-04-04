@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function insertionSort(arr) {
+      var len = arr.length;
+      var preIndex, current;
+      for (var i = 1; i < len; i++) {
+        preIndex = i - 1;
+        current = arr[i];
+        while (preIndex >= 0 && arr[preIndex] > current) {
+          arr[preIndex + 1] = arr[preIndex];
+          preIndex--;
+        }
+        arr[preIndex + 1] = current;
+      }
+      return arr;
+    }
+    function insert(arr) {
+      let newArr = [arr[0]];
+      for(let i = 1; i < arr.length; i++) {
+        let cur = arr[i];
+        for(let j = newArr.length - 1; j >= 0; j--) {
+          if(cur > newArr[j]) {
+            newArr.splice(j + 1, 0, cur);
+            break;
+          }
+          if(j === 0) newArr.unshift(cur);
+        }
+      }
+      return newArr;
+    }
+    let arr = [9, 8, 7, 6, 5, 4, 3, 2, 1];
+    console.log(insertionSort(arr))
+  </script>
+</body>
+</html>
