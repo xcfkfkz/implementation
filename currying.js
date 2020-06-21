@@ -30,7 +30,7 @@ function true_currying(fn) {
 function true_currying(fn) {
   return function f() {
     let args = arguments;
-    if(args.length < fn.length) {
+    if (args.length < fn.length) {
       return function () {
         return f(...[...args, ...arguments]);
       }
