@@ -20,7 +20,7 @@ function true_currying(fn) {
   let args = [];
   return function () {
     args.push(...arguments);
-    if(args.length < fn.length) {
+    if (args.length < fn.length) {
       return arguments.callee;
     } else {
       return fn(...args);
